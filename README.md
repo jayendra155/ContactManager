@@ -6,5 +6,5 @@
   - npm install typescript -g
   - npm install tsd -g
   - Convert the .ts code to .js code parallely by using <code>tsc.cmd -w</code> inside the src folder on command prompt.
-  - 
+  - npm install live-server -g
 
