@@ -8,7 +8,7 @@ var ContactManagerApp;
             this.users = [
                 {
                     name: 'Jayendra V. Singh',
-                    avatar: 'svg-1',
+                    avatar: 'svg-3',
                     bio: 'I am an Information Science Engineer who loves to code, play cricket and football',
                     notes: [
                         { title: 'Payback Dinner', date: new Date("2016-06-06") },
@@ -17,7 +17,7 @@ var ContactManagerApp;
                 },
                 {
                     name: 'Maddan Verma',
-                    avatar: 'svg-1',
+                    avatar: 'svg-2',
                     bio: 'I am an Information Science Engineer who loves to code, play cricket and football',
                     notes: [
                         { title: 'Payback Dinner', date: new Date("2016-06-06") },
