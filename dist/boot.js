@@ -2,6 +2,7 @@
 var ContactManagerApp;
 (function (ContactManagerApp) {
     angular.module("contactManagerApp", ['ngMaterial'])
-        .controller('mainController', ContactManagerApp.MainController);
+        .service('userService', ContactManagerApp.UserService);
+    angular.module('contactManagerApp').controller('mainController', ContactManagerApp.MainController);
 })(ContactManagerApp || (ContactManagerApp = {}));
 //# sourceMappingURL=boot.js.map

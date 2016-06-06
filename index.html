@@ -10,19 +10,25 @@
     <link rel="stylesheet" type="" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic">
     <link rel="stylesheet" href="./assets/app.css">
     <style type="text/css">
-    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak{
-        display: none !important;
-    }
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
     </style>
 </head>
 
 <body ng-cloak ng-controller="mainController as vm">
-    <h1>hello</h1>
-    {{vm.message}}
+    <h1>hello</h1> {{vm.message}}
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./dist/models.js"></script>
+    <script src="./dist/services/userService.js"></script>
     <script src="./dist/controllers/mainController.js"></script>
     <script src="./dist/boot.js"></script>
 </body>

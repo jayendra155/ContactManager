@@ -12,14 +12,32 @@ module ContactManagerApp {
         constructor(private $q: ng.IQService) { }
 
         selectedUser: User = null;
-        
-        loadAllUsers():ng.IPromise<User[]>{
+
+        loadAllUsers(): ng.IPromise<User[]> {
             return this.$q.when(this.users);
         }
-        
-        private users: User[]=[
+
+        private users: User[] = [
             {
-                name : 'Jayendra V. Singh',
+                name: 'Jayendra V. Singh',
+                avatar: 'svg-1',
+                bio: 'I am an Information Science Engineer who loves to code, play cricket and football',
+                notes: [
+                    { title: 'Payback Dinner', date: new Date("2016-06-06") },
+                    { title: 'Buy something', date: new Date("2016-02-14") }
+                ]
+            },
+            {
+                name: 'Maddan Verma',
+                avatar: 'svg-1',
+                bio: 'I am an Information Science Engineer who loves to code, play cricket and football',
+                notes: [
+                    { title: 'Payback Dinner', date: new Date("2016-06-06") },
+                    { title: 'Buy something', date: new Date("2016-02-14") }
+                ]
+            },
+            {
+                name : 'Chuhaad Singhal',
                 avatar: 'svg-1',
                 bio : 'I am an Information Science Engineer who loves to code, play cricket and football',
                 notes: [
