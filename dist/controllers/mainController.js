@@ -6,6 +6,7 @@ var ContactManagerApp;
             this.userService = userService;
             this.$mdSidenav = $mdSidenav;
             this.searchText = '';
+            this.tabIndex = 0;
             this.users = [];
             this.selected = null;
             this.message = "Hello from Controller";
@@ -27,6 +28,7 @@ var ContactManagerApp;
             if (sidenav.isOpen()) {
                 sidenav.close();
             }
+            this.tabIndex = 0;
         };
         MainController.$inject = ['userService', '$mdSidenav'];
         return MainController;

@@ -13,7 +13,8 @@ module ContactManagerApp {
                     console.log(self.users);
                 });
         }
-        searchText: string='';  
+        searchText: string = '';
+        tabIndex: number = 0;
         users: User[] = [];
         selected: User = null;
         message: string = "Hello from Controller";
@@ -21,11 +22,12 @@ module ContactManagerApp {
             this.$mdSidenav('left').toggle();
         }
         selectUser(user: User): void {
-            this.selected=user;
-            var sidenav=this.$mdSidenav('left');
-            if(sidenav.isOpen()){
+            this.selected = user;
+            var sidenav = this.$mdSidenav('left');
+            if (sidenav.isOpen()) {
                 sidenav.close();
             }
+            this.tabIndex=0;
         }
     }
 }
