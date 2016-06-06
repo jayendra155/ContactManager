@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" type="" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic">
+    <link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.min.css" />
     <link rel="stylesheet" href="./assets/app.css">
     <style type="text/css">
         [ng\:cloak],
@@ -21,8 +22,18 @@
     </style>
 </head>
 
-<body ng-cloak ng-controller="mainController as vm">
-    <h1>hello</h1> {{vm.message}}
+<body ng-cloak layout="row" ng-controller="mainController as vm">
+
+    <div ng-include="'dist/view/sidenav.html'" layout="vertical"> </div>
+
+
+    <div layout="column" flex>
+        <div ng-include="'dist/view/toolbar-header.html'"> </div>
+        <md-content flex id="content">
+            main content
+        </md-content>
+    </div>
+
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
