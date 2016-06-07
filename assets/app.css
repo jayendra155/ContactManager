@@ -50,7 +50,7 @@ md-sidenav md-list{
     margin-top: 10px;
 }
 .scrollable-nav-content{
-    position: absolute;
+    position: fixed;
     top: 136px;
     bottom: 0px;
     left: 0px;

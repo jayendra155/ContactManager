@@ -19,6 +19,7 @@ var ContactManagerApp;
                 .then(function (users) {
                 self.users = users;
                 self.selected = users[0];
+                self.userService.selectedUser = self.selected;
                 console.log(self.users);
             });
         }
@@ -27,6 +28,7 @@ var ContactManagerApp;
         };
         MainController.prototype.selectUser = function (user) {
             this.selected = user;
+            this.userService.selectedUser = user;
             var sidenav = this.$mdSidenav('left');
             if (sidenav.isOpen()) {
                 sidenav.close();

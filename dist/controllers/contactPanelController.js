@@ -1,3 +1,4 @@
+///  <reference path="../_all.ts" />
 var ContactManagerApp;
 (function (ContactManagerApp) {
     var ContactPanelController = (function () {
@@ -8,11 +9,14 @@ var ContactManagerApp;
                 { name: 'Phone', icon: 'phone' },
                 { name: 'Facebook', icon: 'facebook_box' },
                 { name: 'Twitter', icon: 'twitter' },
-                { name: 'Google_plus', icon: 'google_plus' },
+                { name: 'Google+', icon: 'google_plus' },
                 { name: 'Hangouts', icon: 'hangouts' }
             ];
             this.user = userService.selectedUser;
         }
+        ContactPanelController.prototype.submitContact = function (action) {
+            this.$mdBottomSheet.hide(action);
+        };
         ContactPanelController.$inject = ['userService', '$mdBottomSheet'];
         return ContactPanelController;
     }());

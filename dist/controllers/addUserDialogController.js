@@ -1,3 +1,4 @@
+///  <reference path="../_all.ts" />
 var ContactManagerApp;
 (function (ContactManagerApp) {
     var AddUserDialogController = (function () {
@@ -9,6 +10,7 @@ var ContactManagerApp;
             this.$mdDialog.cancel();
         };
         AddUserDialogController.prototype.save = function () {
+            console.log('saving');
             this.$mdDialog.hide(new ContactManagerApp.User("placeholder", "", "", []));
         };
         AddUserDialogController.$inject = ['$mdDialog'];
