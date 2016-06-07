@@ -4,6 +4,7 @@ var ContactManagerApp;
     var AddUserDialogController = (function () {
         function AddUserDialogController($mdDialog) {
             this.$mdDialog = $mdDialog;
+            this.avatars = ['svg-1', 'svg-2', 'svg-3', 'svg-4', 'svg-5'];
         }
         AddUserDialogController.prototype.cancel = function () {
             console.log('cancelled');
