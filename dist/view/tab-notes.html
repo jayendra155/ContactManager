@@ -3,7 +3,7 @@
     <md-card ng-repeat="note in vm.selected.notes | orderBy: '-date':true">
         <md-card-content>
             <h3>{{note.title}}</h3>
-            <p>{{note.date | date: 'MM//dd/yyyy'}}</p>
+            <p>{{note.date | date: 'MM/dd/yyyy'}}</p>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button aria-label="button-label" class="md-mini|md-fab" ng-click="vm.removeNote(note)">

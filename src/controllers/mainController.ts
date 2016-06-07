@@ -38,15 +38,15 @@ module ContactManagerApp {
             this.$mdDialog.show({
                 templateUrl: './dist/view/newUserDialog.html',
                 parent: angular.element(document.body),
-                targetEvent:$event,
-                controller:AddUserDialogController,
+                targetEvent: $event,
+                controller: AddUserDialogController,
                 controllerAs: 'ctrl',
                 clickOutsideToClose: true,
-                fullscreen:useFullScreen
+                fullscreen: useFullScreen
             }).then((user: User) => {
                 self.openToast('User added');
             }, () => {
-                console.log('You cancelled the dialog');    
+                console.log('You cancelled the dialog');
             });
         }
         clearNotes($event): void {

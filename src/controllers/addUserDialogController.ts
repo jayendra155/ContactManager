@@ -3,6 +3,7 @@ module ContactManagerApp{
         static $inject=['$mdDialog'];
         constructor(private $mdDialog){}
         cancel():void{
+            console.log('cancelled');
             this.$mdDialog.cancel();
         }
         save():void{
