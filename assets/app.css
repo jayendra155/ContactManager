@@ -49,3 +49,11 @@ md-sidenav md-list{
 #content md-icon.avatar{
     margin-top: 10px;
 }
+.scrollable-nav-content{
+    position: absolute;
+    top: 136px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: auto;
+}

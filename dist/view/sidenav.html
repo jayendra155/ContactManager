@@ -7,28 +7,27 @@
         <h1>Contacts</h1>
     </md-toolbar>
     <div layout-padding>
-        <md-autocomplete 
-                        md-search-text="vm.searchText"
-                        md-items="item in vm.users | filter: vm.searchText"
-                        md-item-text="item.name"
-                        md-min-length="3"
-                        placeholder="filter">
-                <md-item-tempelate>
-                    <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.name}}</span>
-                </md-item-tempelate>
-                <md-not-found>
-                    No user matching "{{vm.searchText}}" were found    
-                </md-not-found>
+        <md-autocomplete md-search-text="vm.searchText" md-items="item in vm.users | filter: vm.searchText" md-item-text="item.name"
+            md-min-length="3" placeholder="filter">
+            <md-item-tempelate>
+                <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.name}}</span>
+            </md-item-tempelate>
+            <md-not-found>
+                No user matching "{{vm.searchText}}" were found
+            </md-not-found>
         </md-autocomplete>
     </div>
-    <md-content >
-      <md-list>
-        <md-list-item ng-repeat="user in vm.users | filter: vm.searchText | orderBy: 'name'">
-          <md-button ng-click="vm.selectUser(user)" ng-class="{'selected': user === vm.selected }"> 
-                <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>   
-                <span ng-bind="user.name"></span>
-           </md-button>
-        </md-list-item>
-      </md-list>
+    <md-content class="scrollable-nav-content">
+        <md-list>
+            <md-list-item ng-repeat="user in vm.users | filter: vm.searchText | orderBy: 'name'">
+                <md-button ng-click="vm.selectUser(user)" ng-class="{'selected': user === vm.selected }">
+                    <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>
+                    <span ng-bind="user.name"></span>
+                </md-button>
+            </md-list-item>
+        </md-list>
     </md-content>
+    <md-button class="md-fab md-fab-bottom-right" ng-click="vm.addUser($event)" aria-label="button-label">
+        <ng-md-icon icon="add" ng-click="vm.addUser($event)"></ng-md-icon>
+    </md-button>
 </md-sidenav>
