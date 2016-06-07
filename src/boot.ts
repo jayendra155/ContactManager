@@ -4,7 +4,7 @@ module ContactManagerApp {
         .service('userService', UserService)
         .controller('mainController', MainController)
         .controller('AddUserDialogController',AddUserDialogController)
-        .controller('contactPanelController',ContactPanelController)
+        .controller('ContactPanelController',ContactPanelController)
         .config(($mdIconProvider: angular.material.IIconProvider,
             $mdThemingProvider: angular.material.IThemingProvider) => {
 
