@@ -5,6 +5,7 @@ var ContactManagerApp;
         .service('userService', ContactManagerApp.UserService)
         .controller('mainController', ContactManagerApp.MainController)
         .controller('AddUserDialogController', ContactManagerApp.AddUserDialogController)
+        .controller('contactPanelController', ContactManagerApp.ContactPanelController)
         .config(function ($mdIconProvider, $mdThemingProvider) {
         $mdIconProvider
             .defaultIconSet('./assets/svg/avatars.svg', 128)

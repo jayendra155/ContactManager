@@ -2,17 +2,17 @@
 var ContactManagerApp;
 (function (ContactManagerApp) {
     var MainController = (function () {
-        function MainController(userService, $mdSidenav, $mdToast, $mdDialog, $mdMedia) {
+        function MainController(userService, $mdSidenav, $mdToast, $mdDialog, $mdMedia, $mdBottomSheet) {
             this.userService = userService;
             this.$mdSidenav = $mdSidenav;
             this.$mdToast = $mdToast;
             this.$mdDialog = $mdDialog;
             this.$mdMedia = $mdMedia;
+            this.$mdBottomSheet = $mdBottomSheet;
             this.searchText = '';
             this.tabIndex = 0;
             this.users = [];
             this.selected = null;
-            this.message = "Hello from Controller";
             var self = this;
             this.userService
                 .loadAllUsers()
@@ -74,7 +74,25 @@ var ContactManagerApp;
                 .position("top right")
                 .hideDelay(3000));
         };
-        MainController.$inject = ['userService', '$mdSidenav', '$mdToast', '$mdDialog', '$mdMedia'];
+        MainController.prototype.showContactOptions = function ($event) {
+            this.$mdBottomSheet.show({
+                parent: angular.element(document.getElementById('wrapper')),
+                templateUrl: './dist/view/contactSheet.html',
+                controller: ContactManagerApp.ContactPanelController,
+                controllerAs: 'cp',
+                bindToController: true
+            })
+                .then(function (clickedItem) {
+                clickedItem && console.log(clickedItem.name + ' clicked!');
+            });
+        };
+        MainController.$inject = [
+            'userService',
+            '$mdSidenav',
+            '$mdToast',
+            '$mdDialog',
+            '$mdMedia',
+            '$mdBottomSheet'];
         return MainController;
     }());
     ContactManagerApp.MainController = MainController;

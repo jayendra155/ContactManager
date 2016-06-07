@@ -1,12 +1,19 @@
 ///  <reference path="../_all.ts" />
 module ContactManagerApp {
     export class MainController {
-        static $inject = ['userService', '$mdSidenav', '$mdToast', '$mdDialog', '$mdMedia'];
+        static $inject = [
+            'userService',
+            '$mdSidenav',
+            '$mdToast',
+            '$mdDialog',
+            '$mdMedia',
+            '$mdBottomSheet'];
         constructor(private userService: IUserService,
             private $mdSidenav: angular.material.ISidenavService,
             private $mdToast: angular.material.IToastService,
             private $mdDialog: angular.material.IDialogService,
-            private $mdMedia: angular.material.IMedia) {
+            private $mdMedia: angular.material.IMedia,
+            private $mdBottomSheet: angular.material.IBottomSheetService) {
             var self = this;
             this.userService
                 .loadAllUsers()
@@ -20,7 +27,6 @@ module ContactManagerApp {
         tabIndex: number = 0;
         users: User[] = [];
         selected: User = null;
-        message: string = "Hello from Controller";
         toggleSideNav(): void {
             this.$mdSidenav('left').toggle();
         }
@@ -74,6 +80,18 @@ module ContactManagerApp {
                     .position("top right")
                     .hideDelay(3000)
             );
+        }
+        showContactOptions($event) {
+            this.$mdBottomSheet.show({
+                parent: angular.element(document.getElementById('wrapper')),
+                templateUrl: './dist/view/contactSheet.html',
+                controller: ContactPanelController,
+                controllerAs: 'cp',
+                bindToController: true
+            })
+                .then((clickedItem) => {
+                    clickedItem && console.log(clickedItem.name + ' clicked!');
+                });
         }
     }
 }
