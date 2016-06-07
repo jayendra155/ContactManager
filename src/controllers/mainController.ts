@@ -20,6 +20,8 @@ module ContactManagerApp {
                 .then((users: User[]) => {
                     self.users = users;
                     self.selected = users[0];
+                    self.userService.selectedUser=self.selected;
+                    
                     console.log(self.users);
                 });
         }
@@ -32,6 +34,7 @@ module ContactManagerApp {
         }
         selectUser(user: User): void {
             this.selected = user;
+            this.userService.selectedUser=user;
             var sidenav = this.$mdSidenav('left');
             if (sidenav.isOpen()) {
                 sidenav.close();

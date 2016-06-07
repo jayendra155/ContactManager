@@ -3,7 +3,7 @@ module ContactManagerApp {
         static $inject = ['userService', '$mdBottomSheet'];
 
         constructor(private userService: IUserService,
-            private $mdBottomSheet: angular.material.IBottomSheetService) {
+            private $mdBottomSheet) {
             this.user = userService.selectedUser;
         }
         user: User;
