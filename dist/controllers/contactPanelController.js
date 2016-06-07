@@ -4,6 +4,13 @@ var ContactManagerApp;
         function ContactPanelController(userService, $mdBottomSheet) {
             this.userService = userService;
             this.$mdBottomSheet = $mdBottomSheet;
+            this.actions = [
+                { name: 'Phone', icon: 'phone' },
+                { name: 'Facebook', icon: 'facebook_box' },
+                { name: 'Twitter', icon: 'twitter' },
+                { name: 'Google_plus', icon: 'google_plus' },
+                { name: 'Hangouts', icon: 'hangouts' }
+            ];
             this.user = userService.selectedUser;
         }
         ContactPanelController.$inject = ['userService', '$mdBottomSheet'];
