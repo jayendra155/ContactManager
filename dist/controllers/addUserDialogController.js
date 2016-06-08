@@ -8,6 +8,7 @@ var ContactManagerApp;
         }
         AddUserDialogController.prototype.cancel = function () {
             console.log('cancelled');
+            //this.$mdDialog.hide();
             this.$mdDialog.cancel();
         };
         AddUserDialogController.prototype.save = function () {

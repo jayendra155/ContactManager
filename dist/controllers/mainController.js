@@ -45,6 +45,7 @@ var ContactManagerApp;
                 controller: ContactManagerApp.AddUserDialogController,
                 controllerAs: 'ctrl',
                 clickOutsideToClose: true,
+                escapeToClose: true,
                 fullscreen: useFullScreen
             }).then(function (user) {
                 self.openToast('User added');
