@@ -1,38 +1,50 @@
 <md-dialog aria-label="label">
-   <form name="UserForm"  ng-submit="ctrl.save()">
-       <md-dialog-content>
-           <div layout="column" layout-padding>
-               <div layout-gt-sm="row">
-                   <md-input-container class="md-block" flex-gt-sm>
-                      <label>Avatar</label>
-                      <md-select ng-model="ctrl.user.avatar" name="avatar">
-                        <md-option ng-value="avatar" ng-repeat="avatar in ctrl.avatars">
-                          <md-icon md-svg-icon="{{avatar}}" aria-label="label" ></md-icon>
-                       </md-option>
-                      </md-select>
-                   </md-input-container>
+    <form name="UserForm" ng-submit="ctrl.save()">
+        <md-dialog-content>
+            <div layout="column" layout-padding>
+                <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label >First name</label>
-                        <input type="text" name="firstName" ng-model="ctrl.user.firstName">
+                        <label>Avatar</label>
+                        <md-select ng-model="ctrl.user.avatar" name="avatar" required>
+                            <md-option ng-value="avatar" ng-repeat="avatar in ctrl.avatars">
+                                <md-icon md-svg-icon="{{avatar}}" aria-label="label"></md-icon>
+                            </md-option>
+                        </md-select>
+                        <div ng-messages="UserForm.avatar.$error">
+                            <div ng-message="required">This is required</div>
+                        </div>
                     </md-input-container>
-                     <md-input-container class="md-block" flex-gt-sm>
-                        <label >Last name</label>
-                        <input type="text" name="lastName" ng-model="ctrl.user.lastName">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>First name</label>
+                        <input type="text" name="firstName" ng-model="ctrl.user.firstName" required>
+                        <div ng-messages="UserForm.firstName.$error">
+                            <div ng-message="required">This is required</div>
+                        </div>
                     </md-input-container>
-               </div>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Last name</label>
+                        <input type="text" name="lastName" ng-model="ctrl.user.lastName" required>
+                        <div ng-messages="UserForm.lastName.$error">
+                            <div ng-message="required">This is required</div>
+                        </div>
+                    </md-input-container>
+                </div>
                 <md-input-container class="md-block" flex-gt-sm>
-                    <label >Biography</label>
-                    <textarea rows="5" ng-model="ctrl.user.bio" name="bio" ></textarea>
+                    <label>Biography</label>
+                    <textarea rows="5" ng-model="ctrl.user.bio" name="bio" required></textarea>
+                    <div ng-messages="UserForm.bio.$error">
+                        <div ng-message="required">This is required</div>
+                    </div>
                 </md-input-container>
-           </div>
-       </md-dialog-content>
-       <md-dialog-actions layout="row">
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
             <md-button aria-label="button-label" ng-click="ctrl.cancel()">
-               Cancel
+                Cancel
             </md-button>
-             <md-button aria-label="button-label" class="md-primary md-raised" ng-click="ctrl.save()">
-               Save
+            <md-button aria-label="button-label" class="md-primary md-raised" ng-click="ctrl.save()" ng-disabled="UserForm.$invalid">
+                Save
             </md-button>
-       </md-dialog-actions>
-   </form>
+        </md-dialog-actions>
+    </form>
 </md-dialog>

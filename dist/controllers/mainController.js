@@ -13,6 +13,7 @@ var ContactManagerApp;
             this.tabIndex = 0;
             this.users = [];
             this.selected = null;
+            this.newNote = new ContactManagerApp.Note('', null);
             var self = this;
             this.userService
                 .loadAllUsers()
@@ -65,6 +66,16 @@ var ContactManagerApp;
                 self.selected.notes = [];
                 self.openToast('All notes cleared');
             });
+        };
+        MainController.prototype.setFormScope = function (scope) {
+            this.formScope = scope;
+        };
+        MainController.prototype.addNote = function () {
+            this.selected.notes.push(this.newNote);
+            this.formScope.noteForm.$setUntouched();
+            this.formScope.noteForm.$setPristine();
+            this.newNote = new ContactManagerApp.Note('', null);
+            this.openToast("Note was added");
         };
         MainController.prototype.removeNote = function (note) {
             var foundIndex = this.selected.notes.indexOf(note);

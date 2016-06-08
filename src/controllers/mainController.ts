@@ -29,6 +29,7 @@ module ContactManagerApp {
         tabIndex: number = 0;
         users: User[] = [];
         selected: User = null;
+        newNote: Note = new Note('', null);
         toggleSideNav(): void {
             this.$mdSidenav('left').toggle();
         }
@@ -71,6 +72,17 @@ module ContactManagerApp {
                 self.selected.notes = [];
                 self.openToast('All notes cleared');
             });
+        }
+        formScope: any
+        setFormScope(scope) {
+            this.formScope = scope;
+        }
+        addNote() {
+            this.selected.notes.push(this.newNote);
+            this.formScope.noteForm.$setUntouched();
+            this.formScope.noteForm.$setPristine();
+            this.newNote = new Note('', null);
+            this.openToast("Note was added");
         }
         removeNote(note: Note): void {
             var foundIndex = this.selected.notes.indexOf(note);
