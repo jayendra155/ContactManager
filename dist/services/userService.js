@@ -28,7 +28,9 @@ var ContactManagerApp;
                     name: 'Chuhaad Singhal',
                     avatar: 'svg-1',
                     bio: 'I am a Computer Science Engineer who loves to be sad',
-                    notes: []
+                    notes: [
+                        { title: 'They see me rollin\' they hatin\' ', date: new Date("1991-07-31") }
+                    ]
                 },
                 {
                     name: 'Chuddu Pagla',
@@ -37,6 +39,15 @@ var ContactManagerApp;
                     notes: [
                         { title: 'Daaru lelo', date: new Date("2016-06-06") },
                         { title: 'Nasha kar lo', date: new Date("2016-02-14") }
+                    ]
+                },
+                {
+                    name: 'Takla',
+                    avatar: 'svg-1',
+                    bio: 'I am an Information Science Engineer who loves to do anything esp parties and nighouts on weekdays',
+                    notes: [
+                        { title: 'Dating kar lo', date: new Date("2016-06-06") },
+                        { title: 'Udaasi failwa lo', date: new Date("2016-02-14") }
                     ]
                 }
             ];
