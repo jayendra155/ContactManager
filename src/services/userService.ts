@@ -59,7 +59,8 @@ module ContactManagerApp {
                 bio: 'I am an Information Science Engineer who loves to do anything esp parties and nighouts on weekdays',
                 notes: [
                     { title: 'Dating kar lo', date: new Date("2016-06-06") },
-                    { title: 'Udaasi failwa lo', date: new Date("2016-02-14") }
+                    { title: 'Udaasi failwa lo', date: new Date("2016-02-14") },
+                    { title: 'Hisaab karwa lo', date: new Date("2016-09-15") }
                 ]
             }
         ];
