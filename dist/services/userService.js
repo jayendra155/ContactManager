@@ -20,8 +20,8 @@ var ContactManagerApp;
                     avatar: 'svg-2',
                     bio: 'I am an Information Science Engineer who loves to code',
                     notes: [
-                        { title: 'Payback Dinner', date: new Date("2016-06-06") },
-                        { title: 'Buy something', date: new Date("2016-02-14") }
+                        { title: 'RESTful self services banani hain', date: new Date("2016-06-06") },
+                        { title: 'Makkari karni hai', date: new Date("2016-02-14") }
                     ]
                 },
                 {
