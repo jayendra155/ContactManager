@@ -66,7 +66,7 @@ module ContactManagerApp {
             {
                 name: 'Gaenda',
                 avatar: 'svg-4',
-                bio: 'I am an Information Science Engineer who loves to fall in love iwth the people who ar ealready in love....'+
+                bio: 'I am an Information Science Engineer who loves to fall in love with the people who are already in love....'+
                         '...\t\t\t(again and again)',
                 notes: [
                     { title: 'Zindagi mein kabhi koi aaye na rabba', date: new Date("2016-10-18") },
