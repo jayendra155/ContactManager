@@ -54,10 +54,11 @@ var ContactManagerApp;
                 {
                     name: 'Gaenda',
                     avatar: 'svg-4',
-                    bio: 'I am an Information Science Engineer who loves to fall in love....' +
+                    bio: 'I am an Information Science Engineer who loves to fall in love iwth the people who ar ealready in love....' +
                         '...\t\t\t(again and again)',
                     notes: [
-                        { title: 'Zindagi mein kabhi koi aaye na rabba', date: new Date("2016-10-18") }
+                        { title: 'Zindagi mein kabhi koi aaye na rabba', date: new Date("2016-10-18") },
+                        { title: 'Bas jee rahe hain aur pyaar kar rahe hain', date: new Date("2016-10-18") }
                     ]
                 }
             ];
